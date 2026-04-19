@@ -20,6 +20,7 @@ let selectedProduct = null;
 document.addEventListener('DOMContentLoaded', () => {
     cargarProductos(currentPage);
     actualizarContadorCarrito();
+    actualizarNavbarUsuario();
 
     // Evento: buscar productos
     document.getElementById('searchForm').addEventListener('submit', (e) => {
@@ -30,6 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Evento: agregar al carrito desde el modal
     document.getElementById('btnAddToCart').addEventListener('click', agregarAlCarrito);
+
+    // Evento: login
+    document.getElementById('btnLogin').addEventListener('click', iniciarSesion);
+
+    // Evento: registro
+    document.getElementById('btnSignup').addEventListener('click', registrarUsuario);
 });
 
 // ============================================================
@@ -267,4 +274,109 @@ function mostrarAlerta(mensaje) {
     setTimeout(() => {
         if (alerta.parentNode) alerta.remove();
     }, 3000);
+}
+
+// ============================================================
+// LOGIN - Iniciar Sesion (usa sessionStorage)
+// ============================================================
+function iniciarSesion() {
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
+    const errorDiv = document.getElementById('loginError');
+    const successDiv = document.getElementById('loginSuccess');
+
+    errorDiv.classList.add('d-none');
+    successDiv.classList.add('d-none');
+
+    if (!email || !password) {
+        errorDiv.textContent = 'Por favor completa todos los campos.';
+        errorDiv.classList.remove('d-none');
+        return;
+    }
+
+    // Buscar usuario registrado en sessionStorage
+    const usuarios = JSON.parse(sessionStorage.getItem('usuarios')) || [];
+    const usuario = usuarios.find(u => u.email === email && u.password === password);
+
+    if (!usuario) {
+        errorDiv.textContent = 'Correo o contrasena incorrectos.';
+        errorDiv.classList.remove('d-none');
+        return;
+    }
+
+    // Guardar sesion activa
+    sessionStorage.setItem('usuarioActivo', JSON.stringify(usuario));
+    successDiv.textContent = `Bienvenido, ${usuario.nombre}!`;
+    successDiv.classList.remove('d-none');
+
+    setTimeout(() => {
+        $('#loginModal').modal('hide');
+        actualizarNavbarUsuario();
+        mostrarAlerta(`Sesion iniciada como ${usuario.nombre}`);
+    }, 1000);
+}
+
+// ============================================================
+// REGISTRO - Registrar Usuario (usa sessionStorage)
+// ============================================================
+function registrarUsuario() {
+    const nombre = document.getElementById('signupName').value.trim();
+    const email = document.getElementById('signupEmail').value.trim();
+    const password = document.getElementById('signupPassword').value.trim();
+    const errorDiv = document.getElementById('signupError');
+    const successDiv = document.getElementById('signupSuccess');
+
+    errorDiv.classList.add('d-none');
+    successDiv.classList.add('d-none');
+
+    if (!nombre || !email || !password) {
+        errorDiv.textContent = 'Por favor completa todos los campos.';
+        errorDiv.classList.remove('d-none');
+        return;
+    }
+
+    // Verificar si ya existe el correo
+    let usuarios = JSON.parse(sessionStorage.getItem('usuarios')) || [];
+    if (usuarios.find(u => u.email === email)) {
+        errorDiv.textContent = 'Este correo ya esta registrado.';
+        errorDiv.classList.remove('d-none');
+        return;
+    }
+
+    // Registrar nuevo usuario
+    usuarios.push({ nombre, email, password });
+    sessionStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    successDiv.textContent = 'Registro exitoso! Ya puedes iniciar sesion.';
+    successDiv.classList.remove('d-none');
+
+    setTimeout(() => {
+        $('#signupModal').modal('hide');
+        document.getElementById('signupForm').reset();
+        mostrarAlerta(`Usuario ${nombre} registrado correctamente`);
+    }, 1500);
+}
+
+// ============================================================
+// ACTUALIZAR NAVBAR SEGUN SESION
+// ============================================================
+function actualizarNavbarUsuario() {
+    const usuario = JSON.parse(sessionStorage.getItem('usuarioActivo'));
+    const dropdownMenu = document.querySelector('.dropdown-menu-right');
+
+    if (usuario) {
+        dropdownMenu.innerHTML = `
+            <span class="dropdown-item-text"><strong>${usuario.nombre}</strong></span>
+            <span class="dropdown-item-text text-muted">${usuario.email}</span>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Mis pedidos</a>
+            <a class="dropdown-item" href="#" id="btnLogout">Cerrar Sesion</a>
+        `;
+        // Evento cerrar sesion
+        document.getElementById('btnLogout').addEventListener('click', (e) => {
+            e.preventDefault();
+            sessionStorage.removeItem('usuarioActivo');
+            location.reload();
+        });
+    }
 }
