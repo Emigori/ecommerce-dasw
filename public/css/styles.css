@@ -1,0 +1,175 @@
+/* =============================================================
+   styles.css — Estilos personalizados del e-commerce DASW
+   ============================================================= */
+
+/* ---------- General ---------- */
+body {
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---------- Navbar ---------- */
+.navbar .badge-cart {
+  position: relative;
+  top: -8px;
+  font-size: 0.7rem;
+}
+
+/* ---------- Carousel ---------- */
+.carousel-item img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* ---------- Product Cards ---------- */
+.card-product {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card-product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-product .card-img-top {
+  height: 200px;
+  object-fit: contain;
+  padding: 15px;
+  background: #fff;
+}
+
+.card-product .card-body {
+  background: #fff;
+}
+
+.card-product .card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-height: 2.4em;
+}
+
+.card-product .card-text {
+  font-size: 0.82rem;
+  color: #666;
+  min-height: 3em;
+}
+
+.card-product .price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.card-product .category-badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+/* ---------- Pagination ---------- */
+.pagination .page-link {
+  color: #343a40;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #343a40;
+  border-color: #343a40;
+  color: #fff;
+}
+
+/* ---------- Cart Items ---------- */
+.cart-item {
+  border: 1px solid #e0e0e0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.cart-item .item-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.cart-item .item-price {
+  color: #28a745;
+  font-weight: 700;
+}
+
+/* ---------- Cart Summary ---------- */
+.cart-summary {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 20px;
+}
+
+.cart-summary .total-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.cart-summary .total-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+/* ---------- Modal ---------- */
+.modal-product-img {
+  max-height: 250px;
+  object-fit: contain;
+}
+
+/* ---------- Admin ---------- */
+.admin-table img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.btn-admin {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+}
+
+/* ---------- Empty State ---------- */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-state i {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+/* ---------- Quantity Input ---------- */
+.qty-input {
+  width: 60px;
+  text-align: center;
+}
+
+/* ---------- Loading Spinner ---------- */
+.loading-spinner {
+  text-align: center;
+  padding: 40px;
+}
+
+.loading-spinner .spinner-border {
+  width: 3rem;
+  height: 3rem;
+}

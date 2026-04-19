@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>DASW - Panel de Administracion</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <a class="navbar-brand nav-item nav-link active" href="home.html">DASW</a>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="admin.html">
+              <i class="fas fa-cog"></i> Admin
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">
+              <i class="fas fa-store"></i> Tienda
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shopping_cart.html">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge badge-light" id="cartCount">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-4 mb-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3><i class="fas fa-boxes"></i> Administrar Productos</h3>
+        <button class="btn btn-success" id="btnNuevoProducto" data-toggle="modal" data-target="#productFormModal">
+          <i class="fas fa-plus"></i> Nuevo Producto
+        </button>
+      </div>
+
+      <!-- Tabla de productos -->
+      <div class="table-responsive">
+        <table class="table table-hover admin-table" id="productsTable">
+          <thead class="thead-dark">
+            <tr>
+              <th>Imagen</th>
+              <th>Titulo</th>
+              <th>Categoria</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="productsTableBody">
+            <!-- Se llena dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner-border text-dark" role="status">
+          <span class="sr-only">Cargando...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MODAL: Formulario de Producto (Crear / Editar) ========== -->
+    <div class="modal fade" id="productFormModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="formModalTitle">Nuevo Producto</h5>
+            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form id="productForm">
+              <input type="hidden" id="formProductId" />
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="formTitle">Titulo *</label>
+                    <input type="text" class="form-control" id="formTitle" required />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="formCategory">Categoria *</label>
+                    <select class="form-control" id="formCategory" required>
+                      <option value="">Seleccionar...</option>
+                      <option value="electronica">Electronica</option>
+                      <option value="ropa">Ropa</option>
+                      <option value="joyeria">Joyeria</option>
+                      <option value="accesorios">Accesorios</option>
+                      <option value="hogar">Hogar</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="formDescription">Descripcion *</label>
+                <textarea class="form-control" id="formDescription" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="formImageUrl">URL de Imagen *</label>
+                <input type="url" class="form-control" id="formImageUrl" placeholder="https://ejemplo.com/imagen.jpg" required />
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="formPrice">Precio por unidad *</label>
+                    <input type="number" class="form-control" id="formPrice" step="0.01" min="0.01" required />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="formStock">Stock *</label>
+                    <input type="number" class="form-control" id="formStock" min="0" required />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="formUnit">Unidad *</label>
+                    <input type="text" class="form-control" id="formUnit" value="pieza" required />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-success" id="btnGuardarProducto">
+              <i class="fas fa-save"></i> Guardar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MODAL: Confirmar Eliminacion ========== -->
+    <div class="modal fade" id="deleteProductModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title">Eliminar Producto</h5>
+            <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <p>Estas seguro de que deseas eliminar <strong id="deleteAdminProductName"></strong>?</p>
+            <p class="text-muted">Esta accion no se puede deshacer.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-danger" id="btnConfirmDeleteProduct">
+              <i class="fas fa-trash"></i> Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Admin JS -->
+    <script src="js/admin.js"></script>
+  </body>
+</html>

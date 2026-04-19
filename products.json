@@ -1,0 +1,122 @@
+[
+  {
+    "id": "prod001",
+    "imageUrl": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "title": "Mochila Fjallraven",
+    "description": "Mochila perfecta para el uso diario y viajes. Compartimento principal con cremallera doble.",
+    "unit": "pieza",
+    "category": "accesorios",
+    "pricePerUnit": 899.99,
+    "stock": 25
+  },
+  {
+    "id": "prod002",
+    "imageUrl": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+    "title": "Playera Casual Slim Fit",
+    "description": "Playera de algodon slim fit para hombre, ideal para uso casual.",
+    "unit": "pieza",
+    "category": "ropa",
+    "pricePerUnit": 349.50,
+    "stock": 50
+  },
+  {
+    "id": "prod003",
+    "imageUrl": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+    "title": "Chamarra de Algodon",
+    "description": "Chamarra ligera de algodon para hombre, perfecta para entretiempo.",
+    "unit": "pieza",
+    "category": "ropa",
+    "pricePerUnit": 1299.00,
+    "stock": 15
+  },
+  {
+    "id": "prod004",
+    "imageUrl": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+    "title": "Playera Casual Fit",
+    "description": "Gran variedad de colores disponibles. Material suave y comodo.",
+    "unit": "pieza",
+    "category": "ropa",
+    "pricePerUnit": 199.99,
+    "stock": 100
+  },
+  {
+    "id": "prod005",
+    "imageUrl": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+    "title": "Brazalete de Oro Dragon",
+    "description": "Brazalete clasico con diseno de dragon, chapado en oro de 14k.",
+    "unit": "pieza",
+    "category": "joyeria",
+    "pricePerUnit": 2499.00,
+    "stock": 8
+  },
+  {
+    "id": "prod006",
+    "imageUrl": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+    "title": "Collar de Micropave",
+    "description": "Collar elegante con piedras de micropave, ideal para ocasiones especiales.",
+    "unit": "pieza",
+    "category": "joyeria",
+    "pricePerUnit": 1899.50,
+    "stock": 12
+  },
+  {
+    "id": "prod007",
+    "imageUrl": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "title": "Anillo de Oro Blanco",
+    "description": "Anillo premium de oro blanco con diamante de 1/4 quilate.",
+    "unit": "pieza",
+    "category": "joyeria",
+    "pricePerUnit": 5999.99,
+    "stock": 5
+  },
+  {
+    "id": "prod008",
+    "imageUrl": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+    "title": "Disco Duro Externo WD 2TB",
+    "description": "Almacenamiento portatil USB 3.0, compatible con PC y Mac.",
+    "unit": "pieza",
+    "category": "electronica",
+    "pricePerUnit": 1099.00,
+    "stock": 30
+  },
+  {
+    "id": "prod009",
+    "imageUrl": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+    "title": "Monitor Curvo Samsung 49\"",
+    "description": "Monitor ultrawide curvo de 49 pulgadas, resolucion 4K.",
+    "unit": "pieza",
+    "category": "electronica",
+    "pricePerUnit": 18999.00,
+    "stock": 3
+  },
+  {
+    "id": "prod010",
+    "imageUrl": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+    "title": "SSD Samsung 1TB",
+    "description": "Disco de estado solido interno de alta velocidad, interfaz SATA.",
+    "unit": "pieza",
+    "category": "electronica",
+    "pricePerUnit": 1599.99,
+    "stock": 20
+  },
+  {
+    "id": "prod011",
+    "imageUrl": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+    "title": "SSD WD Green 240GB",
+    "description": "Disco de estado solido economico para mejorar velocidad de arranque.",
+    "unit": "pieza",
+    "category": "electronica",
+    "pricePerUnit": 549.00,
+    "stock": 45
+  },
+  {
+    "id": "prod012",
+    "imageUrl": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+    "title": "Silicon Power SSD 256GB",
+    "description": "SSD compacto y confiable, perfecto para laptops y PCs de escritorio.",
+    "unit": "pieza",
+    "category": "electronica",
+    "pricePerUnit": 449.50,
+    "stock": 35
+  }
+]
