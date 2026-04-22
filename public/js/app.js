@@ -44,13 +44,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================================
 async function cargarProductos(page) {
     const mainList = document.getElementById('mainList');
-    const spinner = document.getElementById('loadingSpinner');
     const searchTerm = document.getElementById('searchInput').value.trim();
 
-    // Mostrar spinner
-    mainList.innerHTML = '';
-    mainList.appendChild(spinner);
-    spinner.style.display = 'block';
+    // Mostrar spinner (creado dinamicamente para evitar bugs al re-renderizar)
+    mainList.innerHTML = `
+        <div class="col-12 loading-spinner">
+            <div class="spinner-border text-dark" role="status">
+                <span class="sr-only">Cargando...</span>
+            </div>
+            <p class="mt-2">Cargando productos...</p>
+        </div>
+    `;
 
     try {
         // Construir URL con paginacion y filtro de busqueda
@@ -61,9 +65,6 @@ async function cargarProductos(page) {
 
         const response = await fetch(url);
         const data = await response.json();
-
-        // Ocultar spinner
-        spinner.style.display = 'none';
 
         // Renderizar productos
         if (data.products && data.products.length > 0) {
