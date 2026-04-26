@@ -1,7 +1,7 @@
 [
   {
     "id": "prod001",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/bags/Elegance%20Handbag/1.png",
+    "imageUrl": "/img/prod001.svg",
     "title": "Mochila Fjallraven",
     "description": "Mochila perfecta para el uso diario y viajes. Compartimento principal con cremallera doble.",
     "unit": "pieza",
@@ -11,7 +11,7 @@
   },
   {
     "id": "prod002",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/mens-shirts/Blue%20&%20Black%20Check%20Shirt/1.png",
+    "imageUrl": "/img/prod002.svg",
     "title": "Playera Casual Slim Fit",
     "description": "Playera de algodon slim fit para hombre, ideal para uso casual.",
     "unit": "pieza",
@@ -21,7 +21,7 @@
   },
   {
     "id": "prod003",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/1.png",
+    "imageUrl": "/img/prod003.svg",
     "title": "Chamarra de Algodon",
     "description": "Chamarra ligera de algodon para hombre, perfecta para entretiempo.",
     "unit": "pieza",
@@ -31,7 +31,7 @@
   },
   {
     "id": "prod004",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Short%20Sleeve%20Shirt/1.png",
+    "imageUrl": "/img/prod004.svg",
     "title": "Playera Casual Fit",
     "description": "Gran variedad de colores disponibles. Material suave y comodo.",
     "unit": "pieza",
@@ -41,7 +41,7 @@
   },
   {
     "id": "prod005",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/womens-jewellery/Gold%20Hoop%20Earrings/1.png",
+    "imageUrl": "/img/prod005.svg",
     "title": "Brazalete de Oro Dragon",
     "description": "Brazalete clasico con diseno de dragon, chapado en oro de 14k.",
     "unit": "pieza",
@@ -51,7 +51,7 @@
   },
   {
     "id": "prod006",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/womens-jewellery/Silver%20Necklace/1.png",
+    "imageUrl": "/img/prod006.svg",
     "title": "Collar de Micropave",
     "description": "Collar elegante con piedras de micropave, ideal para ocasiones especiales.",
     "unit": "pieza",
@@ -61,7 +61,7 @@
   },
   {
     "id": "prod007",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/womens-jewellery/Zodiac%20Necklace/1.png",
+    "imageUrl": "/img/prod007.svg",
     "title": "Anillo de Oro Blanco",
     "description": "Anillo premium de oro blanco con diamante de 1/4 quilate.",
     "unit": "pieza",
@@ -71,7 +71,7 @@
   },
   {
     "id": "prod008",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/1.png",
+    "imageUrl": "/img/prod008.svg",
     "title": "Disco Duro Externo WD 2TB",
     "description": "Almacenamiento portatil USB 3.0, compatible con PC y Mac.",
     "unit": "pieza",
@@ -81,7 +81,7 @@
   },
   {
     "id": "prod009",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/1.png",
+    "imageUrl": "/img/prod009.svg",
     "title": "Monitor Curvo Samsung 49\"",
     "description": "Monitor ultrawide curvo de 49 pulgadas, resolucion 4K.",
     "unit": "pieza",
@@ -91,7 +91,7 @@
   },
   {
     "id": "prod010",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/mobile-accessories/Samsung%20Galaxy%20Watch%206%20Classic/1.png",
+    "imageUrl": "/img/prod010.svg",
     "title": "SSD Samsung 1TB",
     "description": "Disco de estado solido interno de alta velocidad, interfaz SATA.",
     "unit": "pieza",
@@ -101,7 +101,7 @@
   },
   {
     "id": "prod011",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S24/1.png",
+    "imageUrl": "/img/prod011.svg",
     "title": "SSD WD Green 240GB",
     "description": "Disco de estado solido economico para mejorar velocidad de arranque.",
     "unit": "pieza",
@@ -111,7 +111,7 @@
   },
   {
     "id": "prod012",
-    "imageUrl": "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/1.png",
+    "imageUrl": "/img/prod012.svg",
     "title": "Silicon Power SSD 256GB",
     "description": "SSD compacto y confiable, perfecto para laptops y PCs de escritorio.",
     "unit": "pieza",
